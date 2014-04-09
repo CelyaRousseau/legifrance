@@ -1,0 +1,18 @@
+nav(ng-class="{true:'nav-search nav-search-vertical nav-search-left nav-search-open', false:'nav-search nav-search-vertical nav-search-left'}[isActive]", id="nav-search-s1")
+  form(class='form-vertical')
+    div(class="control-group")
+      label(class="control-label", for="inputEmail")
+        | Email
+      div(class="controls")
+        input(type="text", id="inputEmail", placeholder="Email")
+    div(class="control-group")
+      label(class="control-label", for="inputPassword")
+        | Password
+      div(class="controls")
+        input(type="password", id="inputPassword", placeholder="Password")
+    div(class="control-group")
+      div(class="controls")
+        label(class="checkbox")
+          input(type="checkbox")
+          | Remember me
+        input(type="submit", value="Submit")

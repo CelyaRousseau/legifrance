@@ -1,0 +1,56 @@
+/* General styles for all menus */
+ 
+.nav-search {
+    background: #47a3da;
+    position: fixed;
+}
+ 
+.nav-search a {
+    display: block;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 300;
+}
+ 
+.nav-search a:hover {
+    background: #258ecd;
+}
+ 
+.nav-search a:active {
+    background: #afdefa;
+    color: #47a3da;
+}
+ 
+/* Orientation-dependent styles for the content of the menu */
+ 
+.nav-search-vertical {
+    width: 300px;
+    height: 100%;
+    top: 0;
+    z-index: 1000;
+}
+ 
+.nav-search-vertical a {
+    border-bottom: 1px solid #258ecd;
+    padding: 1em;
+}
+ 
+ 
+/* Vertical menu that slides from the left or right */
+ 
+.nav-search-left {
+    left: -300px;
+}
+
+.nav-search-left.nav-search-open {
+    left: 0px;
+}
+
+/* Transitions */
+ 
+.nav-search,
+.nav-search-push {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
