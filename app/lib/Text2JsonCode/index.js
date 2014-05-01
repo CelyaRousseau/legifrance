@@ -5,10 +5,7 @@ var fs     = require('fs'),
 exports.parse = function() {
   var stream  = byline(fs.createReadStream('sources/legitext.txt',{encoding: 'utf8'}));
   var divOpen = [{livre: false}, {titre: false}, {chapitre: false}, {section: false}, {sous_section: false}, {paragraphe: false },{article: false}];
-  var file    = fs.readFileSync("sources/legitext.xml", "utf8");
-  var json    = parser.toJson(file);
 
-  
   divOpen.closeTag = function(nb) {
 
     var divReturn = '';
@@ -107,8 +104,17 @@ exports.parse = function() {
     text += divOpen.closeTag(0);
     fs.appendFileSync("sources/legitext.xml", text, 'utf8');
     fs.appendFileSync("sources/legitext.xml", "</root>", 'utf8');
+    var file    = fs.readFileSync("sources/legitext.xml", "utf8");
+    var json    = parser.toJson(file);
     console.log(json);
+    console.log('stream start');
+    fs.appendFile('sources/legifrance.json', json, function (err) {
+      if (err) throw err;
+      console.log('It\'s saved!');
+    });
   });
+
+  
 
 
 };
