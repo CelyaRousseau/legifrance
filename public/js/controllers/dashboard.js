@@ -12,6 +12,7 @@ appLegifrance.controller('dashboard', ['$scope','$location', function($scope, $l
     $scope.home      = { url: '/partials/home' };
     $scope.searchBar = { url: '/partials/searchBar' };
     $scope.navBar    = { url: '/partials/navBar' };
+    $scope.tree    = { url: '/partials/tree' };
 
     $scope.isActive = false;
 
